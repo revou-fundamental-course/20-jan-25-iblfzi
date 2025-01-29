@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/script.js"></script> <!-- Pastikan script dimuat setelah DOM -->
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>Kalkulator BMI</h1>
+    </header>
+
+    <main>
+        <!-- Bagian Input -->
+        <section>
+            <!-- Pendahuluan -->
+            <article>
+                <p>Body Mass Index (BMI) adalah parameter yang digunakan untuk menghitung berat badan seseorang. Melalui perhitungan ini, Anda dapat mengetahui apakah berat badan Anda tergolong normal, kurang, atau berlebih.</p>
+                <p><strong>Perhatian! </strong>Hasil perhitungan Kalkulator BMI ini hanya data digunakan sebagai informasi mengenai berat badan. Selalu konsultasikan kepada tenaga medis profesional untuk mendapatkan hasil yang lebih akurat, informasi kesehatan, dan tindakan medis yang tepat</p>
+            </article>
+
+            <!-- Form Input -->
+            <form id="form-bmi">
+                <h2>Hitung BMI</h2>
+                <div class="form-group">
+                    <label for="gender">Jenis Kelamin:</label>
+                    <select id="gender" required>
+                        <option value="laki-laki">Laki-laki</option>
+                        <option value="perempuan">Perempuan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="input-berat-badan">Berat Badan (kg):</label>
+                    <input type="number" id="input-berat-badan" placeholder="Masukkan berat badan Anda" required 
+                        min="1" max="999" oninput="validateInput(this)">
+                </div>
+            
+                <div class="form-group">
+                    <label for="input-usia">Usia (tahun):</label>
+                    <input type="number" id="input-usia" placeholder="Masukkan usia Anda" required 
+                        min="1" max="999" oninput="validateInput(this)">
+                </div>
+            
+                <div class="form-group">
+                    <label for="input-tinggi-badan">Tinggi Badan (cm):</label>
+                    <input type="number" id="input-tinggi-badan" placeholder="Masukkan tinggi badan Anda" required 
+                        min="1" max="999" oninput="validateInput(this)">
+                </div>
+            
+                <div class="form-actions">
+                    <button class="bg-cadet-blue" id="btn-hitung" type="button">Hitung BMI</button>
+                    <button class="bg-black" id="btn-reset" type="button">Reset</button>
+                </div>
+            </form>
+            
+        </section>
+
+        <!-- Bagian Hasil -->
+        <section class="result-section">
+            <header>
+                <h2>Hasil</h2>
+            </header>
+        
+            <div>
+                <span id="result-bmi">0</span>
+            </div>
+        
+            <article>
+                <p><strong>Penjelasan:</strong></p>
+                <p></p> <!-- Penjelasan akan diisi oleh JavaScript -->
+            </article>
+        </section>
+        
+    </main>
+
+    <footer>
+        <span>Made by Iqbal Fauzi@2025</span>
+    </footer>
+</body>
+
+</html>

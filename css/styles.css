@@ -1,0 +1,115 @@
+/* Ini File CSS */
+
+/* Styling untuk elemen utama */
+main {
+    display: flex; /* Menggunakan flexbox untuk mengatur layout */
+    gap: 32px; /* Memberikan jarak antara elemen di dalam main */
+    padding: 32px; /* Menambahkan ruang di dalam main */
+}
+
+/* Styling untuk footer */
+footer {
+    text-align: center; /* Pusatkan teks di dalam footer */
+}
+
+/* Styling untuk header utama */
+.main-header {
+    text-align: center; /* Pusatkan teks di dalam header */
+}
+
+/* Styling untuk input bertipe number */
+input[type=number] {
+    width: 100%; /* Buat input selebar container */
+    padding: 12px 20px; /* Tambahkan padding agar lebih nyaman */
+    margin: 8px 0; /* Beri jarak atas dan bawah */
+    box-sizing: border-box; /* Padding dan border dihitung dalam ukuran total elemen */
+}
+
+/* Styling untuk form */
+form {
+    background-color: rgb(175, 243, 175); /* Warna latar hijau muda */
+    padding: 32px; /* Menambahkan padding di dalam form */
+}
+
+/* Styling untuk grup dalam form */
+.form-group {
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Susunan elemen dalam kolom */
+    padding-bottom: 10px; /* Memberi jarak bawah antar elemen */
+}
+
+/* Styling untuk tombol */
+button {
+    border: none; /* Menghilangkan border */
+    padding: 10px; /* Memberi padding agar lebih nyaman */
+    color: white; /* Warna teks putih */
+}
+
+/* Background hitam */
+.bg-black {
+    background-color: black; /* Latar belakang hitam */
+}
+
+/* Background cadet blue (Namun warna yang diberikan adalah merah, bukan cadet blue) */
+.bg-cadet-blue {
+    background-color: red; /* Latar belakang merah */
+}
+
+/* Styling untuk hasil perhitungan BMI */
+.result-section {
+    padding: 16px; /* Menambahkan ruang dalam elemen */
+    text-align: center; /* Pusatkan teks */
+    background-color: rgb(175, 243, 175); /* Warna latar hijau muda */
+}
+
+/* Styling untuk hasil BMI */
+#result-bmi {
+    font-size: 3rem; /* Ukuran teks besar */
+    font-weight: bold; /* Membuat teks lebih tebal */
+    color: #000000; /* Warna teks hitam */
+}
+
+/* Styling untuk dropdown gender */
+#gender {
+    border-radius: 8px; /* Membuat sudut dropdown lebih bulat */
+    padding: 9px; /* Memberikan ruang di dalam dropdown */
+    width: 100%; /* Dropdown memenuhi lebar container */
+    border: 1px solid #ccc; /* Border abu-abu */
+    box-sizing: border-box; /* Padding dan border dihitung dalam ukuran total elemen */
+    font-size: 16px; /* Ukuran font dalam dropdown */
+}
+
+/* Styling saat dropdown gender dalam keadaan aktif/fokus */
+#gender:focus {
+    outline: none; /* Menghilangkan outline default */
+    border-color: rgb(175, 243, 175); /* Mengubah warna border saat fokus */
+    box-shadow: 0 0 5px rgb(88, 215, 88); /* Menambahkan efek bayangan saat fokus */
+}
+
+/* Styling untuk input dalam form */
+.form-group input {
+    border-radius: 8px; /* Membuat sudut input lebih bulat */
+    padding: 14px; /* Memberikan padding agar lebih nyaman */
+    border: 1px solid #ccc; /* Border abu-abu tipis */
+    width: 100%; /* Input memenuhi lebar container */
+    box-sizing: border-box; /* Padding dan border dihitung dalam ukuran total elemen */
+}
+
+/* Styling untuk input saat dalam keadaan aktif/fokus */
+.form-group input:focus {
+    outline: none; /* Menghilangkan outline default */
+    border-color: rgb(175, 243, 175); /* Mengubah warna border saat fokus */
+    box-shadow: 0 0 5px rgb(88, 215, 88); /* Menambahkan efek bayangan saat fokus */
+}
+
+/* Media query untuk tampilan mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        gap: 16px; /* Kurangi jarak antar elemen */
+    }
+
+    form, .result-section {
+        padding: 16px; /* Kurangi padding untuk tampilan mobile */
+    }
+}
