@@ -4,17 +4,17 @@ Kalkulator BMI adalah aplikasi berbasis web yang digunakan untuk menghitung Inde
 --------------------------------------------------------------------
 🚀 Fitur
 -----------------------------------------------------
-•	Input tinggi badan dan berat badan
-•	Pilihan gender dengan dropdown
-•	Perhitungan BMI otomatis
-•	Tampilan hasil dengan kategori BMI
-•	Desain responsif dan mudah digunakan
+1. Input tinggi badan dan berat badan
+2. Pilihan gender dengan dropdown
+3. Perhitungan BMI otomatis
+4. Tampilan hasil dengan kategori BMI
+5. Desain responsif dan mudah digunakan
 -----------------------------------------------------
 🛠️ Teknologi yang Digunakan
 -----------------------------------------------------
-•	HTML untuk struktur halaman
-•	CSS untuk desain tampilan
-•	JavaScript untuk logika perhitungan
+1. HTML untuk struktur halaman
+2. CSS untuk desain tampilan
+3. JavaScript untuk logika perhitungan
 -----------------------------------------------------
 📌 Cara Menggunakan
 -----------------------------------------------------
