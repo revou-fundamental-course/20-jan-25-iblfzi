@@ -1,15 +1,59 @@
-// Fungsi validasi input
-function validateInput(input) {
-    const value = input.value;
+// Fungsi validasi input angka dan panjang minimal 3 digit
+function validateNumericInput(input) {
+    let value = input.value.replace(/\D/g, ""); // Hanya angka
 
-    // Jika bukan angka atau panjang lebih dari 3 digit, hapus karakter terakhir
-    if (!/^\d*$/.test(value) || value.length > 3) {
-        input.value = value.slice(0, 3); // Potong hingga 3 digit
+    if (value.length < 3) {
+        input.setCustomValidity("Panjang nilai minimal 3 digit.");
+    } else {
+        input.setCustomValidity(""); // Menghapus pesan validasi jika valid
     }
+
+    if (value.length > 3) {
+        value = value.slice(0, 3); // Batasi maksimal 3 digit
+    }
+
+    input.value = value;
+}
+
+// Fungsi validasi input umur
+function validateAgeInput(input) {
+    let value = input.value.replace(/\D/g, ""); // Hanya angka
+
+    if (value.length > 3) {
+        value = value.slice(0, 3); // Batasi maksimal 3 digit
+    }
+
+    let age = parseInt(value, 10);
+
+    if (age > 120) {
+        alert("Usia tidak boleh lebih dari 120 tahun.");
+        value = "120"; // Maksimal 120
+    } else if (age < 1 && value !== "") {
+        alert("Usia minimal adalah 1 tahun.");
+        value = "1"; // Minimal 1
+    }
+
+    input.value = value;
+}
+
+// Fungsi untuk mengecek apakah semua input valid
+function isFormValid() {
+    const usia = document.getElementById("input-usia").value.trim();
+    const beratBadan = document.getElementById("input-berat-badan").value.trim();
+    const tinggiBadan = document.getElementById("input-tinggi-badan").value.trim();
+
+    if (!usia || !beratBadan || !tinggiBadan) {
+        alert("Semua kolom wajib diisi.");
+        return false;
+    }
+
+    return true;
 }
 
 // Fungsi untuk menghitung BMI
 function hitungBMI() {
+    if (!isFormValid()) return; // Cek apakah formulir valid
+
     const beratBadan = parseFloat(document.getElementById("input-berat-badan").value);
     const tinggiBadanCm = parseFloat(document.getElementById("input-tinggi-badan").value);
     const gender = document.getElementById("gender").value; // Mendapatkan jenis kelamin dari dropdown
@@ -24,7 +68,7 @@ function hitungBMI() {
 
     let kategori, saran;
 
-// Menentukan kategori BMI berdasarkan jenis kelamin
+    // Menentukan kategori BMI berdasarkan jenis kelamin
     if (bmi < 18.5) {
         kategori = "Kurus (Underweight)";
         saran = gender === 'laki-laki' ? "Disarankan untuk menambah berat badan dengan latihan beban." : "Disarankan untuk menambah berat badan dengan diet sehat.";
@@ -55,11 +99,14 @@ function resetForm() {
 }
 
 // Menambahkan event listener untuk validasi pada setiap input
+document.getElementById("input-usia").addEventListener("input", function() {
+    validateAgeInput(this);
+});
 document.getElementById("input-berat-badan").addEventListener("input", function() {
-    validateInput(this);
+    validateNumericInput(this);
 });
 document.getElementById("input-tinggi-badan").addEventListener("input", function() {
-    validateInput(this);
+    validateNumericInput(this);
 });
 
 // Menambahkan event listener untuk tombol hitung dan reset
